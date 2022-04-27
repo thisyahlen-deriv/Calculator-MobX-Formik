@@ -3,12 +3,17 @@
  *{
    font-family: 'Roboto', sans-serif;
    font-size: 18px;
+   
  }
 
  body{
    display:flex;
    justify-content:center;
    align-items:center;
+   background-image: url(./assets/calculator_pic.jpg);
+   background-repeat: no-repeat;
+   background-size: auto auto;
+   background-attachment: fixed;
  }
 
  .container {

@@ -1,5 +1,5 @@
 import './App.css'
-import Form from './form'
+import Form from './FormCalculator'
 
 const App = () => {
   return <Form />
