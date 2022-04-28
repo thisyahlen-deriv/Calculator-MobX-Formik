@@ -24,7 +24,11 @@ export const buttons = [
     value: '.',
     classes: 'special',
   },
-
+  {
+    display: '%',
+    value: '%',
+    classes: 'special',
+  },
   {
     display: '7',
     value: '7',
@@ -66,5 +70,6 @@ export const buttons = [
   {
     display: '0',
     value: '0',
+    classes: 'zero',
   },
 ]

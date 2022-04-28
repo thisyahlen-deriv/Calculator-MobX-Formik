@@ -3,17 +3,19 @@
  *{
    font-family: 'Roboto', sans-serif;
    font-size: 18px;
-   
  }
-
+ 
  body{
    display:flex;
    justify-content:center;
    align-items:center;
-   background-image: url(./assets/calculator_pic.jpg);
+   background-image: url(./assets/calculator2.png);
    background-repeat: no-repeat;
    background-size: auto auto;
    background-attachment: fixed;
+   background-position: center center;
+   background-blend-mode: color;   
+   background-size: cover;
  }
 
  .container {
@@ -27,8 +29,8 @@
   border: 10px solid #101116;
   background: #101116;
   border: 5px;
-  padding: 10px;
-  border-radius: 5px
+  padding: 20px;
+  border-radius: 30px
  }
 
  .keypad{
@@ -49,6 +51,8 @@
     letter-spacing:1px;
     border: 2px solid grey;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px
   }
 
   #clear{
@@ -65,8 +69,11 @@
   }
 
   #backspace{
-    color: #262834
+    color: #262834;
+    grid-column: 3/4;
+    grid-row: 1;
   }
+
 
   button{
     margin: 5px;
@@ -76,19 +83,48 @@
     background: #262834;
     color: #ffffff;
     font-weight: 500;
+    cursor: pointer;
   }
 
   input:focus,
   input:active,
-  button:focus,
+  button:focus{
+    outline: none;
+    box-shadow: 1px 1px;
+    transform: translateY(2px);
+  }
+
   button:active{
     outline: none;
+    box-shadow: 1px 1px;
+    transform: translateY(2px);
   }
+
 
   .highlight{
     background: #56cbdb;
   }
 
   .highlight__special{
-    background: #56cbdb;
+    background: orange;
+    color: black;
+  }
+
+  .highlight-clear{
+    background: #F6512E;
+    font-weight: bold;
+    color: #ffffff;
+    animation: anim-shadow .3s forwards;
+  }
+
+  .highlight-c{
+    background: #F6512E;
+    font-weight: bold;
+    color: #ffffff;
+    animation: anim-shadow .3s forwards
+  }
+
+  .highlight__zero{
+    color: #ffffff;
+    grid-column: 1/4;
   }

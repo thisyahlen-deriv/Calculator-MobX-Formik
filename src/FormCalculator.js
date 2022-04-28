@@ -37,7 +37,7 @@ const FormCalculator = () => {
             <div className="keypad">
               <button
                 name="clear"
-                className="highlight"
+                className="highlight-clear"
                 id="clear"
                 onClick={() => {
                   setFieldValue('input', '')
@@ -54,7 +54,6 @@ const FormCalculator = () => {
                   className={`highlight__${item.classes}`}
                   value={item.value}
                   onClick={(e) => {
-                    console.log(values)
                     store.handleClick(e.target.value, setFieldValue)
                   }}
                 >
@@ -62,7 +61,7 @@ const FormCalculator = () => {
                 </button>
               ))}
               <button
-                className="highlight"
+                className="highlight-c"
                 id="backspace"
                 onClick={() => {
                   setFieldValue('input', values.input.slice(0, -1))

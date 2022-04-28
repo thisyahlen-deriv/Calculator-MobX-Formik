@@ -5,23 +5,21 @@ export default class Store {
   result = ''
 
   handleClick(input_value, setFieldValue) {
-    if (input_value === '') {
-      //   console.log(this.inputVal)
+    if (this.inputVal === '0') {
       this.inputVal = input_value
       // eslint-disable-next-line no-eval
       this.result = eval(this.inputVal)
     } else {
       this.inputVal = this.inputVal.concat(input_value)
-      console.log(this.inputVal)
       // eslint-disable-next-line no-eval
       if (
         this.inputVal.endsWith('+') ||
         this.inputVal.endsWith('-') ||
         this.inputVal.endsWith('*') ||
         this.inputVal.endsWith('/') ||
-        this.inputVal.endsWith('.')
+        this.inputVal.endsWith('.') ||
+        this.inputVal.endsWith('%')
       ) {
-        // this.inputVal = input_value
       } else {
         // eslint-disable-next-line no-eval
         this.result = eval(this.inputVal.toString())
