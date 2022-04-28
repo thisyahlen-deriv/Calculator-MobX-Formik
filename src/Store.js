@@ -1,20 +1,8 @@
-import { makeObservable, observable, action } from 'mobx'
-
+import { decorate, observable, action } from 'mobx'
+import React from 'react'
 export default class Store {
   inputVal = '0'
   result = '0'
-
-  constructor() {
-    makeObservable(this, {
-      inputVal: observable,
-      handleClick: action.bound,
-      clear: action.bound,
-      backspace: action.bound,
-      calculate: action.bound,
-      result: observable,
-      resultVal: action.bound,
-    })
-  }
 
   handleClick(e) {
     if (this.inputVal === '0') {
@@ -41,6 +29,28 @@ export default class Store {
   resultVal() {
     return this.result
   }
+}
+
+decorate(Store, {
+  inputVal: observable,
+  handleClick: action.bound,
+  clear: action.bound,
+  backspace: action.bound,
+  calculate: action.bound,
+  result: observable,
+  resultVal: action.bound,
+})
+
+let context
+
+export const useStore = () => {
+  if (!context) {
+    const store = new Store()
+
+    context = React.createContext(store)
+  }
+
+  return React.useContext(context)
 }
 
 // const store = new Store()
