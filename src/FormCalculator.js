@@ -33,23 +33,18 @@ const FormCalculator = ({ store }) => {
             </Field>
             <div className="keypad">
               <button
+                name="clear"
                 className="highlight"
                 id="clear"
-                onClick={(e) => {
-                  store.clear(e.target.value, setFieldValue)
+                onClick={() => {
+                  setFieldValue('input', '')
+                  setFieldValue('result', '')
+                  store.clear(setFieldValue)
                 }}
               >
                 Clear
               </button>
-              <button
-                className="highlight"
-                id="backspace"
-                onClick={(e) => {
-                  store.backspace(e.target.value, setFieldValue)
-                }}
-              >
-                C
-              </button>
+
               {buttons.map((item, index) => (
                 <button
                   key={index}
@@ -63,6 +58,16 @@ const FormCalculator = ({ store }) => {
                   {item.display}
                 </button>
               ))}
+              <button
+                className="highlight"
+                id="backspace"
+                onClick={() => {
+                  setFieldValue('input', values.input.slice(0, -1))
+                  store.backspace(setFieldValue)
+                }}
+              >
+                C
+              </button>
               {/* <button
                 type="submit"
                 className="highlight"

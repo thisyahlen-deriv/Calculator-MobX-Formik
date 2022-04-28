@@ -47,8 +47,7 @@ export default class Store {
   clear(setFieldValue) {
     this.inputVal = ''
     this.result = ''
-    setFieldValue('clear', this.inputVal)
-    setFieldValue('result', this.result)
+    setFieldValue('input', '')
   }
 
   backspace(setFieldValue) {
