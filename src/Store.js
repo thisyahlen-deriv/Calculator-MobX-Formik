@@ -12,15 +12,7 @@ export default class Store {
     } else {
       this.inputVal = this.inputVal.concat(input_value)
       // eslint-disable-next-line no-eval
-      if (
-        this.inputVal.endsWith('+') ||
-        this.inputVal.endsWith('-') ||
-        this.inputVal.endsWith('*') ||
-        this.inputVal.endsWith('/') ||
-        this.inputVal.endsWith('.') ||
-        this.inputVal.endsWith('%')
-      ) {
-      } else {
+      if (!this.endsWithAny(['+', '-', '*', '/'], this.inputVal)) {
         // eslint-disable-next-line no-eval
         this.result = eval(this.inputVal.toString())
       }
@@ -49,6 +41,12 @@ export default class Store {
 
   handleInput(value) {
     this.result = value
+  }
+
+  endsWithAny(suffixes, string) {
+    return suffixes.some(function (suffix) {
+      return string.endsWith(suffix)
+    })
   }
 }
 
