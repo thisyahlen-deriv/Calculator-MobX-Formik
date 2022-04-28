@@ -1,8 +1,8 @@
 import { makeObservable, observable, action } from 'mobx'
 
 export default class Store {
-  inputVal = '0'
-  result = '0'
+  inputVal = ''
+  result = ''
 
   constructor() {
     makeObservable(this, {
@@ -13,26 +13,46 @@ export default class Store {
       calculate: action.bound,
       result: observable,
       resultVal: action.bound,
+      handleInput: action.bound,
     })
   }
 
-  handleClick(e) {
-    if (this.inputVal === '0') {
+  handleClick(input_value, setFieldValue) {
+    if (input_value === '') {
       //   console.log(this.inputVal)
-      this.inputVal = e.target.value
+      this.inputVal = input_value
+      // eslint-disable-next-line no-eval
+      this.result = eval(this.inputVal)
     } else {
-      this.inputVal = this.inputVal.concat(e.target.value)
-      //   console.log(this.inputVal)
+      this.inputVal = this.inputVal.concat(input_value)
+      console.log(this.inputVal)
+      // eslint-disable-next-line no-eval
+      if (
+        this.inputVal.endsWith('+') ||
+        this.inputVal.endsWith('-') ||
+        this.inputVal.endsWith('*') ||
+        this.inputVal.endsWith('/') ||
+        this.inputVal.endsWith('.')
+      ) {
+        // this.inputVal = input_value
+      } else {
+        // eslint-disable-next-line no-eval
+        this.result = eval(this.inputVal.toString())
+      }
     }
+    setFieldValue('input', this.inputVal)
+    setFieldValue('result', this.result)
   }
 
-  clear() {
+  clear(setFieldValue) {
     this.inputVal = ''
     this.result = ''
+    setFieldValue('input', '')
   }
 
-  backspace() {
+  backspace(setFieldValue) {
     this.inputVal = this.inputVal.slice(0, -1)
+    setFieldValue('backspace', this.inputVal)
   }
   calculate() {
     // eslint-disable-next-line
@@ -40,6 +60,10 @@ export default class Store {
   }
   resultVal() {
     return this.result
+  }
+
+  handleInput(value) {
+    this.result = value
   }
 }
 

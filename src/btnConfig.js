@@ -5,6 +5,27 @@ export const buttons = [
     classes: 'special',
   },
   {
+    display: '×',
+    value: '*',
+    classes: 'special',
+  },
+  {
+    display: '−',
+    value: '-',
+    classes: 'special',
+  },
+  {
+    display: '+',
+    value: '+',
+    classes: 'special',
+  },
+  {
+    display: '.',
+    value: '.',
+    classes: 'special',
+  },
+
+  {
     display: '7',
     value: '7',
   },
@@ -15,11 +36,6 @@ export const buttons = [
   {
     display: '9',
     value: '9',
-  },
-  {
-    display: '×',
-    value: '*',
-    classes: 'special',
   },
   {
     display: '4',
@@ -33,11 +49,7 @@ export const buttons = [
     display: '6',
     value: '6',
   },
-  {
-    display: '−',
-    value: '-',
-    classes: 'special',
-  },
+
   {
     display: '1',
     value: '1',
@@ -50,18 +62,9 @@ export const buttons = [
     display: '3',
     value: '3',
   },
-  {
-    display: '+',
-    value: '+',
-    classes: 'special',
-  },
+
   {
     display: '0',
     value: '0',
-  },
-  {
-    display: '.',
-    value: '.',
-    classes: 'special',
   },
 ]
