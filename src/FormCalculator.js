@@ -20,10 +20,11 @@ const FormCalculator = () => {
                   type="text"
                   values={values.input}
                   onChange={handleChange}
+                  disabled="disabled"
                 />
               )}
             </Field>
-
+            <div className="equals">=</div>
             <Field name="result">
               {({ field }) => (
                 <input
@@ -31,6 +32,7 @@ const FormCalculator = () => {
                   type="text"
                   values={values.result}
                   onChange={handleChange}
+                  disabled="disabled"
                 />
               )}
             </Field>
