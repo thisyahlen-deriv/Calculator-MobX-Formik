@@ -47,7 +47,7 @@ const FormCalculator = () => {
                   store.clear(setFieldValue)
                 }}
               >
-                Clear
+                CLEAR
               </button>
 
               {buttons.map((item, index) => (
