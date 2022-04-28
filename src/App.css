@@ -133,3 +133,67 @@
   .equals{
     font-size: 25px;
   }
+
+  @media screen and (max-width: 320px) {
+ .container {
+  top:50%;
+  left:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  margin: 0 auto;
+  width:220px;
+  text-align:center;
+  border: 10px solid #101116;
+  background: #F5F4DA;
+  border: 3px black solid;
+  padding: 20px;
+  border-radius: 30px;
+ }
+  input[type='text']{
+   height: 75px;
+   width: 220px;
+    background-color: #dee8dd;
+    border: 0px;
+    color: black;
+    text-align: right;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing:1px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px
+  }
+}
+
+ @media screen and (max-width: 480px) {
+ .container {
+  top:50%;
+  left:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  margin: 0 auto;
+  width:250px;
+  text-align:center;
+  border: 10px solid #101116;
+  background: #F5F4DA;
+  border: 3px black solid;
+  padding: 20px;
+  border-radius: 30px;
+ }
+  input[type='text']{
+    height: 75px;
+    width: 250px;
+    background-color: #dee8dd;
+    border: 0px;
+    color: black;
+    text-align: right;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing:1px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px
+  }
+}
