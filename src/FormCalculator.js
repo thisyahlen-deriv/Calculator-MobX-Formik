@@ -1,10 +1,13 @@
 import React from 'react'
 import { buttons } from './btnConfig'
-import { observer, inject } from 'mobx-react'
+import { observer } from 'mobx-react'
 import './App.css'
 import { Formik, Field } from 'formik'
+import { useStore } from './Store'
 
-const FormCalculator = ({ store }) => {
+const FormCalculator = () => {
+  const store = useStore()
+
   return (
     <>
       <Formik initialValues={{ input: '', result: '' }}>
@@ -84,4 +87,4 @@ const FormCalculator = ({ store }) => {
   )
 }
 
-export default inject('store')(observer(FormCalculator))
+export default observer(FormCalculator)
