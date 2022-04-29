@@ -72,14 +72,6 @@ const FormCalculator = () => {
               >
                 C
               </button>
-              {/* <button
-                type="submit"
-                className="highlight"
-                onClick={store.calculate}
-                id="result"
-              >
-                =
-              </button> */}
             </div>
           </div>
         )}
