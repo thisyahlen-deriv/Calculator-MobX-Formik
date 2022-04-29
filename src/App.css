@@ -166,14 +166,14 @@
   }
 }
 
- @media screen and (max-width: 480px) {
+ @media screen and (min-width: 480px) {
  .container {
   top:50%;
   left:50%;
   position:absolute;
   transform:translate(-50%,-50%);
   margin: 0 auto;
-  width:250px;
+  width:300px;
   text-align:center;
   border: 10px solid #101116;
   background: #F5F4DA;
@@ -183,7 +183,7 @@
  }
   input[type='text']{
     height: 75px;
-    width: 250px;
+    width: 300px;
     background-color: #dee8dd;
     border: 0px;
     color: black;

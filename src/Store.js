@@ -12,7 +12,7 @@ export default class Store {
     } else {
       this.inputVal = this.inputVal.concat(input_value)
       // eslint-disable-next-line no-eval
-      if (!this.endsWithAny(['+', '-', '*', '/'], this.inputVal)) {
+      if (!this.endsWithAny(['+', '-', '*', '/', '%', '.'], this.inputVal)) {
         // eslint-disable-next-line no-eval
         this.result = eval(this.inputVal.toString())
       }
