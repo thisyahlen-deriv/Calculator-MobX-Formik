@@ -5,7 +5,11 @@ export default class Store {
   result = ''
 
   handleClick(input_value, setFieldValue) {
-    if (this.inputVal === '0') {
+    if (this.inputVal.length > 15) {
+      alert('Maximum character length is 15')
+      this.inputVal = ''
+      this.result = ''
+    } else if (this.inputVal === '0') {
       this.inputVal = input_value
       // eslint-disable-next-line no-eval
       this.result = eval(this.inputVal)
